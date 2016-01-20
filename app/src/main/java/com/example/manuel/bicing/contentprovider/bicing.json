@@ -1,0 +1,44 @@
+{
+  "fields": [
+    {
+      "name": "type",
+      "type": "String"
+    },
+    {
+      "name": "latitude",
+      "type": "String"
+    },
+    {
+      "name": "longitude",
+      "type": "String"
+    },
+    {
+      "name": "street_name",
+      "type": "String"
+    },
+    {
+      "name": "street_number",
+      "type": "String"
+    },
+    {
+      "name": "altitude",
+      "type": "String"
+    },
+    {
+      "name": "slots",
+      "type": "String"
+    },
+    {
+      "name": "bikes",
+      "type": "String"
+    },
+    {
+      "name": "nearby_station",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "type": "String"
+    }
+  ]
+}

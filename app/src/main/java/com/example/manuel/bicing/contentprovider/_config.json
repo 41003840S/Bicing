@@ -1,0 +1,13 @@
+{
+  "syntaxVersion": 3,
+  "projectPackageId": "com.example.manuel.bicing",
+  "authority": "com.example.manuel.bicing.provider",
+  "providerJavaPackage": "com.example.manuel.bicing.provider",
+  "providerClassName": "BicingProvider",
+  "sqliteOpenHelperClassName": "BicingSQLiteOpenHelper",
+  "sqliteOpenHelperCallbacksClassName": "BicingSQLiteOpenHelperCallbacks",
+  "databaseFileName": "bicing.db",
+  "databaseVersion": 1,
+  "enableForeignKeys": true,
+  "useAnnotations": true
+}

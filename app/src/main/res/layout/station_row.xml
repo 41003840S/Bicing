@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parada: "
+            android:id="@+id/textView"
+            android:textColor="#F44336"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tvParada"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New Text"
+            android:gravity="center_vertical"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Libres: "
+            android:id="@+id/textView2"
+            android:textColor="#F44336"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tvSlots"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New Text"
+            android:gravity="center_vertical"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponibles: "
+            android:id="@+id/textView3"
+            android:textColor="#F44336"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tvBikes"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New Text"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: "
+            android:id="@+id/textView4"
+            android:textColor="#F44336"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New Text"
+            android:gravity="center_vertical"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estaciones cercanas: "
+            android:id="@+id/textView5"
+            android:textColor="#F44336"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tvNearbyStations"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New Text"
+            android:gravity="center_vertical"
+            style="@style/Base.TextAppearance.AppCompat.Body2" />
+
+    </LinearLayout>
+
+</LinearLayout>
