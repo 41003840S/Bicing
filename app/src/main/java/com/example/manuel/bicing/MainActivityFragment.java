@@ -1,6 +1,6 @@
 package com.example.manuel.bicing;
 
-import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.preference.PreferenceManager;
@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -26,6 +28,7 @@ public class MainActivityFragment extends Fragment implements android.support.v4
     ListView listaEstaciones;
     AdaptadorEstaciones adapter;
     SharedPreferences preferences;
+    Intent intent;
 
     public MainActivityFragment() {
     }
@@ -45,7 +48,7 @@ public class MainActivityFragment extends Fragment implements android.support.v4
             editor.putBoolean("", false);
             editor.apply();
             refrescar();
-            Toast.makeText(getActivity(),"Descargando estaciones",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
 
         }
         //.......................................
@@ -75,16 +78,41 @@ public class MainActivityFragment extends Fragment implements android.support.v4
         listaEstaciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                intent = new Intent(getContext(), MapsActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
             }
         });
 
         return fragmentMain;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
 
-    public void refrescar() {
-        RetroFit llamada = new RetroFit();
-        llamada.downloadStations(getContext());
+        inflater.inflate(R.menu.menu_fragment, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_estaciones) {
+            intent = new Intent(getContext(), MapsActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.action_refresh) {
+            refrescar();
+            Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -107,5 +135,9 @@ public class MainActivityFragment extends Fragment implements android.support.v4
         adapter.swapCursor(null);
     }
 
-}
 
+    public void refrescar() {
+        RetroFit llamada = new RetroFit();
+        llamada.downloadStations(getContext());
+    }
+}
