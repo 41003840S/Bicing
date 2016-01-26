@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,25 +34,38 @@ public class MainActivityFragment extends Fragment implements android.support.v4
     public MainActivityFragment() {
     }
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+    public void onStart() {
+        super.onStart();
+        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         //Si es la primera vez que arranca hace la llamada y lo guarda en la BD
-        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         boolean primer_arranque = preferences.getBoolean(getString(R.string.primer_arranque), true);
 
         if (primer_arranque) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("", false);
             editor.apply();
+
             refrescar();
             Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
-
         }
         //.......................................
+
+        /*if (preferences.getBoolean("switch_refresh", true)){
+            // Your switch is on
+            refrescar();
+            Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
+        } else {
+            // Your switch is off
+        }*/
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -72,6 +86,7 @@ public class MainActivityFragment extends Fragment implements android.support.v4
                 new int[]{},
                 0);
 
+        //Seteamos el adaptador con el listview
         listaEstaciones.setAdapter(adapter);
 
         //Crea un Listener para que con pulsacion abra la estacion en un mapa
@@ -80,6 +95,7 @@ public class MainActivityFragment extends Fragment implements android.support.v4
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intent = new Intent(getContext(), MapsActivity.class);
                 intent.putExtra("id", id);
+                Log.e("ENVIO ID", id + "---------------------------");
                 startActivity(intent);
             }
         });
@@ -90,7 +106,6 @@ public class MainActivityFragment extends Fragment implements android.support.v4
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-
         inflater.inflate(R.menu.menu_fragment, menu);
     }
 
@@ -112,6 +127,7 @@ public class MainActivityFragment extends Fragment implements android.support.v4
             refrescar();
             Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
         }
+
         return super.onOptionsItemSelected(item);
     }
 
