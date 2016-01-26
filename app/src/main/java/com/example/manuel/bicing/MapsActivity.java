@@ -77,12 +77,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 double longitud = Double.parseDouble(estacionCursor.getLongitude());
                 LatLng estacion = new LatLng(latitud, longitud);
 
-                if (Integer.parseInt(estacionCursor.getSlots()) >= 5) {
+                if (Integer.parseInt(estacionCursor.getBikes()) >= 5) {
                     mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.bike)).position(estacion).title(
                                     estacionCursor.getStreetName() + ", " + estacionCursor.getStreetNumber())
                     );
 
-                } else if (Integer.parseInt(estacionCursor.getSlots()) < 5 && Integer.parseInt(estacionCursor.getSlots()) > 0) {
+                } else if (Integer.parseInt(estacionCursor.getBikes()) < 5 && Integer.parseInt(estacionCursor.getSlots()) > 0) {
                     mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.bikeyellow)).position(estacion).title(
                                     estacionCursor.getStreetName() + ", " + estacionCursor.getStreetNumber())
                     );
@@ -111,7 +111,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             double longitud = Double.parseDouble(estacionCursor.getLongitude());
             LatLng estacion = new LatLng(latitud, longitud);
 
-            if (Integer.parseInt(estacionCursor.getSlots()) >= 5) {
+            if (Integer.parseInt(estacionCursor.getBikes()) >= 5) {
 
                 mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.bike)).position(estacion).title(
                                 estacionCursor.getStreetName() + ", " + estacionCursor.getStreetNumber())
@@ -126,7 +126,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition ),
                         2000, null);
 
-            } else if (Integer.parseInt(estacionCursor.getSlots()) < 5 && Integer.parseInt(estacionCursor.getSlots()) > 0) {
+            } else if (Integer.parseInt(estacionCursor.getBikes()) < 5 && Integer.parseInt(estacionCursor.getSlots()) > 0) {
 
                 mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.bikeyellow)).position(estacion).title(
                                 estacionCursor.getStreetName() + ", " + estacionCursor.getStreetNumber())

@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/tvParada"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:text="New Text"
             android:gravity="center_vertical"
             style="@style/Base.TextAppearance.AppCompat.Body2" />
@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/tvSlots"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:text="New Text"
             android:gravity="center_vertical"
             style="@style/Base.TextAppearance.AppCompat.Body2" />
@@ -66,11 +66,11 @@
         <TextView
             android:id="@+id/tvBikes"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:text="New Text"
-            android:drawableRight="@drawable/chevron"
             android:gravity="center_vertical"
             style="@style/Base.TextAppearance.AppCompat.Body2" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -89,7 +89,7 @@
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:text="New Text"
             android:gravity="center_vertical"
             style="@style/Base.TextAppearance.AppCompat.Body2" />
@@ -111,7 +111,7 @@
         <TextView
             android:id="@+id/tvNearbyStations"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:text="New Text"
             android:gravity="center_vertical"
             style="@style/Base.TextAppearance.AppCompat.Body2" />
