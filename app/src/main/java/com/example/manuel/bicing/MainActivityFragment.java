@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.manuel.bicing.provider.bicing.BicingColumns;
@@ -64,9 +65,9 @@ public class MainActivityFragment extends Fragment implements android.support.v4
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setHasOptionsMenu(true);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -126,6 +127,8 @@ public class MainActivityFragment extends Fragment implements android.support.v4
         }else if (id == R.id.action_refresh) {
             refrescar();
             Toast.makeText(getActivity(), "Descargando estaciones", Toast.LENGTH_SHORT).show();
+        }else if (id == R.id.action_search) {
+
         }
 
         return super.onOptionsItemSelected(item);

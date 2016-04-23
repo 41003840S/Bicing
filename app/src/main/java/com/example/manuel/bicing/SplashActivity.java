@@ -30,9 +30,6 @@ public class SplashActivity  extends AppCompatActivity {
         // Obligamos a que la pantalla esté en portrait
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        // Ocultamos la titlebar
-        //requestWindowFeature(Window.FEATURE_SWIPE_TO_DISMISS);
-
         setContentView(R.layout.activity_splash);
 
         // Referenciamos nuestra imagen

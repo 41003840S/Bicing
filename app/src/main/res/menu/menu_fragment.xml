@@ -7,11 +7,17 @@
         android:orderInCategory="100"
         android:title="@string/action_estaciones"
         android:icon="@drawable/mapmarkermultiple"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="100"
+        android:title="@string/action_search"
+        android:icon="@drawable/searching"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_refresh"
         android:orderInCategory="100"
         android:title="@string/action_refresh"
         android:icon="@drawable/refresh"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 </menu>
